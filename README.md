@@ -23,7 +23,7 @@ npm install ngx-horizontal-menu-scroll --save
 
 ``` typescript
     import { CommonModule } from '@angular/common';
-    import { HorizontalScrollMenuModule } from 'horizontal-scroll-menu'; // Import module 
+    import { HorizontalScrollMenuModule } from 'ngx-horizontal-scroll-menu'; // Import module 
     
     @NgModule({
     imports: [

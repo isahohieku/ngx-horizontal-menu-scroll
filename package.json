@@ -1,6 +1,30 @@
 {
   "name": "ngx-horizontal-scroll-menu",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "It also comes with some features such as adding background classes and text classes to quickly style the menu.",
+  "homepage": "https://github.com/isahohieku/ngx-horizontal-menu-scroll#readme",
+  "keywords": [
+    "scroll",
+    "horizontal scroll",
+    "horizontal scroll menu",
+    "scroll menu",
+    "Angular menu",
+    "Angular scroll menu",
+    "Angular horizontal scroll menu"
+  ],
+  "author": {
+    "name": "Isah Ohieku",
+    "email": "isahohieku@gmail.com",
+    "url": "https://github.com/isahohieku"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isahohieku/ngx-horizontal-menu-scroll"
+  },
+  "bugs": {
+    "url": "https://github.com/isahohieku/ngx-horizontal-menu-scroll/issues",
+    "email": "isahohieku@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

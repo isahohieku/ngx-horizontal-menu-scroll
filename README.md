@@ -1,27 +1,112 @@
-# NgxHorizontalScrollMenu
+# Horizontal Scroll Menu
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+This library was built to help save development time and thinking of how to implement a scroll menu.
 
-## Development server
+## Descripiton
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It also comes with some features such as adding background classes and text classes to quickly style the menu.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* `Add Array of items to menu`
+* `Select key from object that holds a link`
+* `Add styles to Background`
+* `Add styles to font`
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+``` 
+npm install ngx-horizontal-menu-scroll --save
+```
 
-## Running unit tests
+## Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+``` typescript
+    import { CommonModule } from '@angular/common';
+    import { HorizontalScrollMenuModule } from 'horizontal-scroll-menu'; // Import module 
+    
+    @NgModule({
+    imports: [
+        CommonModule,
+        HorizontalScrollMenuModule // Add HorizontalScrollMenuModule to imports
+    ],
+    declarations: [AppComponent]
+    bootstrap: [AppComponent],
+    });
 
-## Running end-to-end tests
+    export class AppModule {}
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Usage
 
-## Further help
+```typescript
+    import { Component } from '@angular/core';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    @Component({
+    selector: 'app-root',
+    templateUrl: '<ngx-horizontal-menu-scroll [items]="items" [linkLabel]="link"></ngx-horizontal-menu-scroll>',
+    styleUrls: ['./app.component.scss']
+    })
+    export class AppComponent {
+        title = 'horizontal-menu-test';
+        link = 'link';
+        items: any[] = [
+            { title: 'Orangies', link: 'https://www.github.com/isahohieku' },
+            { title: 'Apple', link: 'https://www.github.com/isahohieku' },
+            { title: 'Mango', link: 'https://www.github.com/isahohieku' },
+            { title: 'Carrot', link: 'https://www.github.com/isahohieku' }
+        ];
+    }
+```
+
+## Options
+
+| Option        | Type          | Default  | Descripiton |
+| ------------- | ------------- | ----- |  --- |
+| items     | array | An array of programatically generated data | This is expected to be an array of items to be displayed on the Scroll |
+| linkLabel     | string | No default | This is expected to be a property in the items array which lets the Scroll know the property that contains the link of an item displayed on the Scroll |
+| background     | string | No default | This is expected to be a class name for adding background styles to the wrapper of the Scroll |
+| text     | string | No default | This is expected to be a class name for adding text styles to the items of the Scroll |
+
+## RoadMap
+
+I'm looking forward to getting the scroll silkier than it is at the moment. For now this are features I look forward to adding. You can request features as well and we look into making it available in later versions.
+
+* `Customizable icons`
+* `Scroll distance`
+* `Hide/Show navigation icons`
+* `Menu items with icon`
+
+## Contributing
+
+This project is open for contribution
+
+## Authors and acknowledgment
+
+I would be acknowledging collaborators here when some start coming in.
+
+## License
+
+MIT
+
+##
+> Github [@isahohieku](https://github.com/isahohieku)
+> Twitter [@isahohieku](https://twitter.com/isahohieku)
+
+### keywords
+
+[scroll](https://www.npmjs.com/search?q=keywords:scroll) 
+
+[horizontal scroll](https://www.npmjs.com/search?q=keywords:horizontal+scroll)
+
+[horizontal scroll menu](https://www.npmjs.com/search?q=keywords:horizontal+scroll+menu)
+
+[scroll menu](https://www.npmjs.com/search?q=keywords:scroll+menu) 
+
+[angular menu](https://www.npmjs.com/search?q=keywords:angular+menu) 
+
+[angular scroll menu](https://www.npmjs.com/search?q=keywords:angular+scroll+menu) 
+
+[angular horizontal scroll menu](https://www.npmjs.com/search?q=keywords:angular+horizontal+scroll+menu) 
+
+[ngx-horizontal-scroll-menu](https://www.npmjs.com/search?q=keywords:ngx-horizontal-scroll-menu) 

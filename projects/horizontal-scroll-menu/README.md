@@ -6,6 +6,10 @@ This library was built to help save development time and thinking of how to impl
 
 It also comes with some features such as adding background classes and text classes to quickly style the menu.
 
+## Example
+
+[Stackblitz](https://stackblitz.com/edit/ngx-horizontal-scroll-menu-example?file=src/app/app.component.ts)
+
 ## Features
 
 * `Add Array of items to menu`
@@ -92,21 +96,3 @@ MIT
 ##
 > Github [@isahohieku](https://github.com/isahohieku)
 > Twitter [@isahohieku](https://twitter.com/isahohieku)
-
-### keywords
-
-[scroll](https://www.npmjs.com/search?q=keywords:scroll) 
-
-[horizontal scroll](https://www.npmjs.com/search?q=keywords:horizontal+scroll)
-
-[horizontal scroll menu](https://www.npmjs.com/search?q=keywords:horizontal+scroll+menu)
-
-[scroll menu](https://www.npmjs.com/search?q=keywords:scroll+menu) 
-
-[angular menu](https://www.npmjs.com/search?q=keywords:angular+menu) 
-
-[angular scroll menu](https://www.npmjs.com/search?q=keywords:angular+scroll+menu) 
-
-[angular horizontal scroll menu](https://www.npmjs.com/search?q=keywords:angular+horizontal+scroll+menu) 
-
-[ngx-horizontal-scroll-menu](https://www.npmjs.com/search?q=keywords:ngx-horizontal-scroll-menu) 

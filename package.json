@@ -25,6 +25,7 @@
     "url": "https://github.com/isahohieku/ngx-horizontal-menu-scroll/issues",
     "email": "isahohieku@gmail.com"
   },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

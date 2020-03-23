@@ -1,4 +1,4 @@
-# Horizontal Scroll Menu
+# Horizontal Menu Scroll
 
 This library was built to help save development time and thinking of how to implement a scroll menu.
 
@@ -67,13 +67,13 @@ npm install ngx-horizontal-menu-scroll --save
 | linkLabel     | string | No default | This is expected to be a property in the items array which lets the Scroll know the property that contains the link of an item displayed on the Scroll |
 | background     | string | No default | This is expected to be a class name for adding background styles to the wrapper of the Scroll |
 | text     | string | No default | This is expected to be a class name for adding text styles to the items of the Scroll |
+| distance     | number | 50 | This is expected to be a number and its to increase/decrease the scroll distance items of the Scroll |
 
 ## RoadMap
 
 I'm looking forward to getting the scroll silkier than it is at the moment. For now this are features I look forward to adding. You can request features as well and we look into making it available in later versions.
 
 * `Customizable icons`
-* `Scroll distance`
 * `Hide/Show navigation icons`
 * `Menu items with icon`
 

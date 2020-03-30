@@ -1,9 +1,14 @@
 # Horizontal Menu Scroll
 
-This library was built to help save development time and thinking of how to implement a scroll menu.
+[![Known Vulnerabilities](https://snyk.io/test/github/isahohieku/ngx-horizontal-menu-scroll/badge.svg?targetFile=package.json)](https://snyk.io/test/github/isahohieku/ngx-horizontal-menu-scroll?targetFile=package.json)
+[![npm version](https://badge.fury.io/js/ngx-horizontal-scroll-menu.svg)](https://badge.fury.io/js/ngx-horizontal-scroll-menu)
+[![HitCount](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu.svg)](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu/)
+[![NPM](https://nodei.co/npm/ngx-horizontal-scroll-menu.png)](https://nodei.co/npm/ngx-horizontal-scroll-menu/)
+
 
 ## Descripiton
 
+This library was built to help save development time and thinking of how to implement a scroll menu.
 It also comes with some features such as adding background classes and text classes to quickly style the menu.
 
 ## Example

@@ -104,7 +104,7 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
   @Input() hideNav = false;
   @Input() navIcon: ImageModel;
   @Input() distance = 50;
-  @Input() scrollSpeed = 2000;
+  @Input() scrollSpeed = 100;
 
   leftArrowHide = true;
   rightArrow = false;
@@ -135,7 +135,6 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
   }
 
   scrollLeft(): void {
-    console.log('left');
     const leftArrow = document.getElementById('list-items');
     const scrollLeft = leftArrow.scrollLeft;
     const distance = scrollLeft - this.distance;
@@ -149,21 +148,20 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
   }
 
   scrollRight(): void {
-    console.log('yes');
-    const leftArrow = document.getElementById('list-items');
-    const scrollLeft = leftArrow.scrollLeft;
+    const listWrapper = document.getElementById('list-items');
+    const scrollLeft = listWrapper.scrollLeft;
     const distance = scrollLeft + this.distance;
     this.scroll(distance);
   }
 
   right(): void {
     const d = this;
-    this.interval = setInterval(() => { console.log('Hello world'); }, this.scrollSpeed);
+    this.interval = setInterval(() => { d.scrollRight(); }, this.scrollSpeed);
   }
 
   scroll(distance): void {
-    const leftArrow = document.getElementById('list-items');
-    leftArrow.scrollTo({ behavior: 'smooth', left: distance });
+    const listWrapper = document.getElementById('list-items');
+    listWrapper.scrollTo({ behavior: 'smooth', left: distance });
   }
 
   clear(): void {
@@ -206,6 +204,10 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
 
     if (simp.hideNav && (simp.hideNav.currentValue !== simp.hideNav.previousValue)) {
       this.hideNav = simp.hideNav.currentValue;
+    }
+
+    if (simp.scrollSpeed && (simp.scrollSpeed.currentValue !== simp.scrollSpeed.previousValue)) {
+      this.scrollSpeed = simp.scrollSpeed.currentValue;
     }
   }
 

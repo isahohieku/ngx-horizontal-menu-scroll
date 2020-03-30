@@ -3,7 +3,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/isahohieku/ngx-horizontal-menu-scroll/badge.svg?targetFile=package.json)](https://snyk.io/test/github/isahohieku/ngx-horizontal-menu-scroll?targetFile=package.json)
 [![npm version](https://badge.fury.io/js/ngx-horizontal-scroll-menu.svg)](https://badge.fury.io/js/ngx-horizontal-scroll-menu)
 [![HitCount](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu.svg)](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu/)
-[![NPM](https://nodei.co/npm/ngx-horizontal-scroll-menu.png)](https://nodei.co/npm/ngx-horizontal-scroll-menu/)
 
 
 ## Descripiton
@@ -77,13 +76,16 @@ npm install ngx-horizontal-menu-scroll --save
 | background     | string | No default | This is expected to be a class name for adding background styles to the wrapper of the Scroll |
 | text     | string | No default | This is expected to be a class name for adding text styles to the items of the Scroll |
 | distance     | number | 50 | This is expected to be a number and its to increase/decrease the scroll distance items of the Scroll |
+| leftIcon     | string | A base64 image url of a left arrow | This is expected to be a string and its default size is 24 px. you can add a string of the path to your left arrow here. There is no provision for right arrow as we flip the image horizontally to denote the right arrow |
+| hideNav     | boolean | false | This is expected to be a boolean true/false to hide/show the nav icons |
+| scrollSpeed     | number | 100 | This is expected to be a number and its the speed of the scroll on mousedown in milliseconds |
 
 ## RoadMap
 
 I'm looking forward to getting the scroll silkier than it is at the moment. For now this are features I look forward to adding. You can request features as well and we look into making it available in later versions.
 
 * `Customizable icons`
-* `Hide/Show navigation icons`
+* `Icon size`
 * `Menu items with icon`
 
 ## Contributing

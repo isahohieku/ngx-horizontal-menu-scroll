@@ -10,7 +10,7 @@ interface ImageModel {
   template: `
     <nav class="d-flex" *ngIf="items?.length" [ngClass]="background">
       <div *ngIf="!hideNav" class="control d-flex align-items-center justify-content-center mousePointer" (mousedown)="left()"
-      (mouseup)="clear()">
+      (click)="scrollLeft()" (mouseup)="clear()">
         <div class="prev" [ngClass]="{'opacity': !leftArrowHide}">
           <img [src]="leftIcon" width="24" />
         </div>
@@ -24,8 +24,8 @@ interface ImageModel {
         </ul>
       </div>
 
-      <div *ngIf="!hideNav" class="control d-flex justify-content-center align-items-center mousePointer" (mousedown)="right()"
-      (mouseup)="clear()">
+      <div *ngIf="!hideNav" class="control d-flex justify-content-center align-items-center mousePointer"
+      (click)="scrollRight()" (mousedown)="right()" (mouseup)="clear()">
         <div class="next rotate-right" [ngClass]="{'opacity': !rightArrow}">
           <img [src]="leftIcon" width="24" />
         </div>

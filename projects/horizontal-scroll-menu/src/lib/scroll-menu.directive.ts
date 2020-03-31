@@ -7,7 +7,7 @@ export class ScrollMenuDirective {
 
   @Output() scrolled = new EventEmitter();
   constructor() {
-   }
+  }
 
   @HostListener('scroll', ['$event']) scrollMenu(e) {
     const responseObject = {
@@ -27,10 +27,6 @@ export class ScrollMenuDirective {
       responseObject.right_arrow = false;
     }
 
-    if (e.target.scrollWidth <= e.target.clientWidth) {
-      responseObject.right_arrow = true;
-      responseObject.left_arrow = true;
-    }
     this.scrolled.emit(responseObject);
 
   }

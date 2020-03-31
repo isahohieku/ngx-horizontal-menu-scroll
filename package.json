@@ -33,6 +33,7 @@
     "build": "ng build",
     "test": "ng test --codeCoverage=true",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "coverage": "npm run pretest && jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

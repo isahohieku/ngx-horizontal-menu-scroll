@@ -4,6 +4,7 @@
 [![npm version](https://badge.fury.io/js/ngx-horizontal-scroll-menu.svg)](https://badge.fury.io/js/ngx-horizontal-scroll-menu)
 [![HitCount](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu.svg)](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu/)
 [![Build Status](https://travis-ci.org/isahohieku/ngx-horizontal-menu-scroll.svg?branch=master)](https://travis-ci.org/isahohieku/ngx-horizontal-menu-scroll)
+[![Coverage Status](https://coveralls.io/repos/github/isahohieku/ngx-horizontal-menu-scroll/badge.svg?branch=master)](https://coveralls.io/github/isahohieku/ngx-horizontal-menu-scroll?branch=master)
 
 
 ## Descripiton

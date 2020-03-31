@@ -12,3 +12,5 @@ before_script:
 script:
   - ng lint
   - npm run test-headless
+after_success:
+  - npm run coverage

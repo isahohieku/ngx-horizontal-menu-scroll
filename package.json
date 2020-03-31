@@ -32,6 +32,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --codeCoverage=true",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

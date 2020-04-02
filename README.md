@@ -55,11 +55,9 @@ npm install ngx-horizontal-menu-scroll --save
 
     @Component({
     selector: 'app-root',
-    templateUrl: '<ngx-horizontal-menu-scroll [items]="items" [linkLabel]="link"></ngx-horizontal-menu-scroll>',
-    styleUrls: ['./app.component.scss']
+    template: '<ngx-horizontal-menu-scroll [items]="items" [linkLabel]="link"></ngx-horizontal-menu-scroll>',
     })
     export class AppComponent {
-        title = 'horizontal-menu-test';
         link = 'link';
         items: any[] = [
             { title: 'Orangies', link: 'https://www.github.com/isahohieku' },
@@ -103,6 +101,5 @@ I would be acknowledging collaborators here when some start coming in.
 
 MIT
 
-##
 > Github [@isahohieku](https://github.com/isahohieku)
 > Twitter [@isahohieku](https://twitter.com/isahohieku)

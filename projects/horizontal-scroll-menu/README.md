@@ -5,6 +5,7 @@
 [![HitCount](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu.svg)](https://hits.dwyl.com/isahohieku/ngx-horizontal-scroll-menu/)
 [![Build Status](https://travis-ci.org/isahohieku/ngx-horizontal-menu-scroll.svg?branch=master)](https://travis-ci.org/isahohieku/ngx-horizontal-menu-scroll)
 [![Coverage Status](https://coveralls.io/repos/github/isahohieku/ngx-horizontal-menu-scroll/badge.svg?branch=master)](https://coveralls.io/github/isahohieku/ngx-horizontal-menu-scroll?branch=master)
+[![codebeat badge](https://codebeat.co/badges/09cf3a7d-902e-4671-a72a-ef3099ac4d72)](https://codebeat.co/projects/github-com-isahohieku-ngx-horizontal-menu-scroll-master)
 
 
 ## Descripiton

@@ -178,37 +178,7 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(simp: SimpleChanges): void {
-    if (simp.items && (simp.items.currentValue !== simp.items.previousValue)) {
-      this.items = simp.items.currentValue;
-    }
-
-    if (simp.background && (simp.background.currentValue !== simp.background.previousValue)) {
-      this.background = simp.background.currentValue;
-    }
-
-    if (simp.text && (simp.text.currentValue !== simp.text.previousValue)) {
-      this.text = simp.text.currentValue;
-    }
-
-    if (simp.linkLabel && (simp.linkLabel.currentValue !== simp.linkLabel.previousValue)) {
-      this.linkLabel = simp.linkLabel.currentValue;
-    }
-
-    if (simp.distance && (simp.distance.currentValue !== simp.distance.previousValue)) {
-      this.distance = simp.distance.currentValue;
-    }
-
-    if (simp.leftIcon && (simp.leftIcon.currentValue !== simp.leftIcon.previousValue)) {
-      this.leftIcon = simp.leftIcon.currentValue;
-    }
-
-    if (simp.hideNav && (simp.hideNav.currentValue !== simp.hideNav.previousValue)) {
-      this.hideNav = simp.hideNav.currentValue;
-    }
-
-    if (simp.scrollSpeed && (simp.scrollSpeed.currentValue !== simp.scrollSpeed.previousValue)) {
-      this.scrollSpeed = simp.scrollSpeed.currentValue;
-    }
+    Object.keys(simp).forEach(key => this[key] = simp[key].currentValue);
   }
 
 }

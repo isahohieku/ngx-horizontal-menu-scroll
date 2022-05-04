@@ -80,6 +80,7 @@ npm install ngx-horizontal-menu-scroll --save
 | leftIcon     | string | A base64 image url of a left arrow | This is expected to be a string and its default size is 24 px. you can add a string of the path to your left arrow here. There is no provision for right arrow as we flip the image horizontally to denote the right arrow |
 | hideNav     | boolean | false | This is expected to be a boolean true/false to hide/show the nav icons |
 | scrollSpeed     | number | 100 | This is expected to be a number and its the speed of the scroll on mousedown in milliseconds |
+| onLinkClicked     | @Output | This would emit an `object` of the link which has been clicked. To programatically route, do not include `linkLabel` in the `items` object you would be passing to the component. |
 
 ## RoadMap
 

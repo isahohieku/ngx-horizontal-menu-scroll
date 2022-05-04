@@ -101,6 +101,19 @@ describe('HorizontalScrollMenuComponent', () => {
     expect(component.scrollLeft).toHaveBeenCalled();
   });
 
+  it('should click on a certain link', () => {
+    spyOn(component.clickedEventEmiiter, 'emit');
+
+    const link = fixture.nativeElement.querySelector('#Item1') as HTMLElement;
+
+    link.dispatchEvent(new Event('click'));
+
+    fixture.detectChanges();
+
+    expect(component.clickedEventEmiiter.emit).toHaveBeenCalledWith({ title: 'Item1', link: 'https://github.com/isahohieku' });
+
+  });
+
   it('should test if scrollLeft on mousedown', fakeAsync(() => {
     const ul = fixture.nativeElement.querySelector('ul') as HTMLElement;
     ul.scrollLeft = 200;

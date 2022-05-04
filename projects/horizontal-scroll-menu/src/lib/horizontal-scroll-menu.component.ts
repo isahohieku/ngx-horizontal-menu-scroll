@@ -18,9 +18,9 @@ interface ImageModel {
       <div [ngClass]="!hideNav ? 'items-wrapper' : 'w-100'">
         <ul id="list-items" #hScroll ngxScrollMenu (scrolled)="listenToItemsScroll($event)">
           <li *ngFor="let item of items" class="px-2">
-            <a *ngIf="item[linkLabel]" [id]="item.title" (click)="onLinkClicked(item)"
+            <a *ngIf="item[linkLabel]" [id]="item?.title" (click)="onLinkClicked(item)"
             [ngClass]="text" [href]="item[linkLabel]">{{ item?.title }}</a>
-            <a *ngIf="!item[linkLabel]" [id]="item.title" (click)="onLinkClicked(item)" [ngClass]="text">{{ item?.title }}</a>
+            <a *ngIf="!item[linkLabel]" [id]="item?.title" (click)="onLinkClicked(item)" [ngClass]="text">{{ item?.title }}</a>
           </li>
         </ul>
       </div>
@@ -180,7 +180,7 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
     return items;
   }
 
-  onLinkClick(item: any): void {
+  onLinkClicked(item: any): void {
     this.clickedEventEmiiter.emit(item);
   }
 

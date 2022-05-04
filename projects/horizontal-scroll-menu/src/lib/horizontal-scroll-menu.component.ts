@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 interface ImageModel {
   type: string;
@@ -18,8 +18,9 @@ interface ImageModel {
       <div [ngClass]="!hideNav ? 'items-wrapper' : 'w-100'">
         <ul id="list-items" #hScroll ngxScrollMenu (scrolled)="listenToItemsScroll($event)">
           <li *ngFor="let item of items" class="px-2">
-            <a *ngIf="item[linkLabel]" [ngClass]="text" [href]="item[linkLabel]">{{ item?.title }}</a>
-            <a *ngIf="!item[linkLabel]" [ngClass]="text">{{ item?.title }}</a>
+            <a *ngIf="item[linkLabel]" [id]="item.title" (click)="onLinkClicked(item)"
+            [ngClass]="text" [href]="item[linkLabel]">{{ item?.title }}</a>
+            <a *ngIf="!item[linkLabel]" [id]="item.title" (click)="onLinkClicked(item)" [ngClass]="text">{{ item?.title }}</a>
           </li>
         </ul>
       </div>
@@ -106,6 +107,8 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
   @Input() distance = 50;
   @Input() scrollSpeed = 100;
 
+  @Output() clickedEventEmiiter = new EventEmitter<any>();
+
   leftArrowHide = true;
   rightArrow = false;
 
@@ -175,6 +178,10 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
     }
 
     return items;
+  }
+
+  onLinkClick(item: any): void {
+    this.clickedEventEmiiter.emit(item);
   }
 
   ngOnChanges(simp: SimpleChanges): void {

@@ -57,7 +57,6 @@ describe('ScrollMenuDirective', () => {
     inputEl.scrollLeft = difference;
 
     fixture.detectChanges();
-    console.log(inputEl.scrollLeft);
 
     inputEl.dispatchEvent(e);
     fixture.detectChanges();

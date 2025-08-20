@@ -5,10 +5,11 @@ import { ScrollMenuDirective } from './scroll-menu.directive';
 
 
 @NgModule({
-  declarations: [ScrollMenuDirective, HorizontalScrollMenuComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    HorizontalScrollMenuComponent,
+    ScrollMenuDirective
   ],
-  exports: [HorizontalScrollMenuComponent],
+  exports: [HorizontalScrollMenuComponent, ScrollMenuDirective],
 })
 export class HorizontalScrollMenuModule { }

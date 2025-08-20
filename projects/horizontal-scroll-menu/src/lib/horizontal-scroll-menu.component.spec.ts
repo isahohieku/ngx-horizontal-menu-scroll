@@ -9,7 +9,7 @@ describe('HorizontalScrollMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HorizontalScrollMenuComponent]
+      imports: [HorizontalScrollMenuComponent]
     })
       .compileComponents();
   });

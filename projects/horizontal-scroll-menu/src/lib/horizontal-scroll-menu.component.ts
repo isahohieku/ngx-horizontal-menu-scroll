@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ScrollMenuDirective } from './scroll-menu.directive';
 
 interface ImageModel {
   type: string;
@@ -7,7 +9,8 @@ interface ImageModel {
 
 @Component({
   selector: 'ngx-horizontal-scroll-menu',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, ScrollMenuDirective],
   template: `
     <nav class="d-flex" *ngIf="items?.length" [ngClass]="background">
       <div *ngIf="!hideNav" class="control d-flex align-items-center justify-content-center mousePointer" (mousedown)="left()"
@@ -133,7 +136,7 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
 
   }
 
-  listenToItemsScroll(e): void {
+  listenToItemsScroll(e: any): void {
     this.leftArrowHide = e.left_arrow;
     this.rightArrow = e.right_arrow;
   }
@@ -163,7 +166,7 @@ export class HorizontalScrollMenuComponent implements OnInit, OnChanges {
     this.interval = setInterval(() => { d.scrollRight(); }, this.scrollSpeed);
   }
 
-  scroll(distance): void {
+  scroll(distance: number): void {
     const listWrapper = document.getElementById('list-items');
     listWrapper.scrollTo({ behavior: 'smooth', left: distance });
   }

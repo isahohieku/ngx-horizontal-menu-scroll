@@ -44,6 +44,7 @@
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless --code-coverage=true",
     "coverage": "ng test --watch=false --code-coverage && cat ./coverage/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "e2e": "ng e2e",
     "pack:lib": "cd dist/horizontal-scroll-menu && npm pack",
     "publish:lib": "cd dist/horizontal-scroll-menu && npm publish",

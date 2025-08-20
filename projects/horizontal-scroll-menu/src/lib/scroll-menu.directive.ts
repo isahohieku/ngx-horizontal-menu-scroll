@@ -1,7 +1,8 @@
 import { Directive, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[ngxScrollMenu]'
+  selector: '[ngxScrollMenu]',
+  standalone: false
 })
 export class ScrollMenuDirective {
 

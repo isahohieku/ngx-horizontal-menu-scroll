@@ -7,6 +7,7 @@ interface ImageModel {
 
 @Component({
   selector: 'ngx-horizontal-scroll-menu',
+  standalone: false,
   template: `
     <nav class="d-flex" *ngIf="items?.length" [ngClass]="background">
       <div *ngIf="!hideNav" class="control d-flex align-items-center justify-content-center mousePointer" (mousedown)="left()"

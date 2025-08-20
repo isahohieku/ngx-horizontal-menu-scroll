@@ -10,7 +10,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/horizontal-scroll-menu/tsconfig.lib.json",
             "project": "projects/horizontal-scroll-menu/ng-package.json"
@@ -25,18 +25,19 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/horizontal-scroll-menu/tsconfig.lib.json",
-              "projects/horizontal-scroll-menu/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/horizontal-scroll-menu/**/*.ts",
+              "projects/horizontal-scroll-menu/**/*.html"
             ]
           }
         }
       }
-    }},
-  "defaultProject": "horizontal-scroll-menu"
+    }
+  },
+  "defaultProject": "horizontal-scroll-menu",
+  "cli": {
+    "analytics": false
+  }
 }

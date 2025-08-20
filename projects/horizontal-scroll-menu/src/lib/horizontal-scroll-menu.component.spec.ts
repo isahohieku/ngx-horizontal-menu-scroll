@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 
 import { HorizontalScrollMenuComponent } from './horizontal-scroll-menu.component';
 import { SimpleChange, SimpleChanges } from '@angular/core';
@@ -7,12 +7,12 @@ describe('HorizontalScrollMenuComponent', () => {
   let component: HorizontalScrollMenuComponent;
   let fixture: ComponentFixture<HorizontalScrollMenuComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [HorizontalScrollMenuComponent]
     })
       .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HorizontalScrollMenuComponent);
@@ -312,5 +312,233 @@ describe('HorizontalScrollMenuComponent', () => {
     fixture.detectChanges();
 
     expect(component.ngOnChanges).toHaveBeenCalled();
+  });
+
+  // Additional tests for 100% coverage
+  it('should test ngOnInit with scrollWidth <= clientWidth', fakeAsync(() => {
+    Object.defineProperty(component.scrollWrapper.nativeElement, 'scrollWidth', {
+      value: 100,
+      writable: true
+    });
+    Object.defineProperty(component.scrollWrapper.nativeElement, 'clientWidth', {
+      value: 200,
+      writable: true
+    });
+
+    component.ngOnInit();
+    tick(100);
+
+    expect(component.leftArrowHide).toBe(true);
+    expect(component.rightArrow).toBe(true);
+  }));
+
+  it('should test ngOnInit with scrollWidth > clientWidth', fakeAsync(() => {
+    Object.defineProperty(component.scrollWrapper.nativeElement, 'scrollWidth', {
+      value: 300,
+      writable: true
+    });
+    Object.defineProperty(component.scrollWrapper.nativeElement, 'clientWidth', {
+      value: 200,
+      writable: true
+    });
+
+    component.ngOnInit();
+    tick(100);
+
+    // Values should remain as initialized
+    expect(component.leftArrowHide).toBe(true);
+    expect(component.rightArrow).toBe(false);
+  }));
+
+  it('should test listenToItemsScroll method', () => {
+    const scrollEvent = {
+      left_arrow: false,
+      right_arrow: true
+    };
+
+    component.listenToItemsScroll(scrollEvent);
+
+    expect(component.leftArrowHide).toBe(false);
+    expect(component.rightArrow).toBe(true);
+  });
+
+  it('should test scroll method', () => {
+    const mockElement = {
+      scrollTo: jasmine.createSpy('scrollTo')
+    };
+    spyOn(document, 'getElementById').and.returnValue(mockElement as any);
+
+    component.scroll(100);
+
+    expect(mockElement.scrollTo).toHaveBeenCalledWith({ behavior: 'smooth', left: 100 });
+  });
+
+  it('should test generateItems method', () => {
+    const items = component.generateItems();
+
+    expect(items.length).toBe(49);
+    expect(items[0]).toEqual({ title: 'Item1', link: 'https://github.com/isahohieku' });
+    expect(items[48]).toEqual({ title: 'Item49', link: 'https://github.com/isahohieku' });
+  });
+
+  it('should test onLinkClicked method', () => {
+    spyOn(component.clickedEventEmiiter, 'emit');
+    const testItem = { title: 'Test Item', link: 'test-link' };
+
+    component.onLinkClicked(testItem);
+
+    expect(component.clickedEventEmiiter.emit).toHaveBeenCalledWith(testItem);
+  });
+
+  it('should test ngOnChanges with multiple properties', () => {
+    const changes: SimpleChanges = {
+      items: new SimpleChange(null, [{ title: 'New Item' }], false),
+      background: new SimpleChange(null, 'new-bg-class', false),
+      text: new SimpleChange(null, 'new-text-class', false)
+    };
+
+    component.ngOnChanges(changes);
+
+    expect(component.items).toEqual([{ title: 'New Item' }]);
+    expect(component.background).toBe('new-bg-class');
+    expect(component.text).toBe('new-text-class');
+  });
+
+  it('should test clear method', () => {
+    component.interval = setInterval(() => {}, 100);
+    spyOn(window, 'clearInterval');
+
+    component.clear();
+
+    expect(clearInterval).toHaveBeenCalledWith(component.interval);
+  });
+
+  it('should test left method with interval', fakeAsync(() => {
+    spyOn(component, 'scrollLeft');
+
+    component.left();
+    tick(component.scrollSpeed);
+
+    expect(component.scrollLeft).toHaveBeenCalled();
+    component.clear();
+  }));
+
+  it('should test right method with interval', fakeAsync(() => {
+    spyOn(component, 'scrollRight');
+
+    component.right();
+    tick(component.scrollSpeed);
+
+    expect(component.scrollRight).toHaveBeenCalled();
+    component.clear();
+  }));
+
+  it('should test scrollLeft with document.getElementById', () => {
+    const mockElement = {
+      scrollLeft: 100,
+      scrollTo: jasmine.createSpy('scrollTo')
+    };
+    spyOn(document, 'getElementById').and.returnValue(mockElement as any);
+    spyOn(component, 'scroll');
+
+    component.scrollLeft();
+
+    expect(component.scroll).toHaveBeenCalledWith(50); // 100 - 50 (default distance)
+  });
+
+  it('should test scrollRight with document.getElementById', () => {
+    const mockElement = {
+      scrollLeft: 100,
+      scrollTo: jasmine.createSpy('scrollTo')
+    };
+    spyOn(document, 'getElementById').and.returnValue(mockElement as any);
+    spyOn(component, 'scroll');
+
+    component.scrollRight();
+
+    expect(component.scroll).toHaveBeenCalledWith(150); // 100 + 50 (default distance)
+  });
+
+  it('should test component with custom distance', () => {
+    component.distance = 75;
+    const mockElement = {
+      scrollLeft: 200,
+      scrollTo: jasmine.createSpy('scrollTo')
+    };
+    spyOn(document, 'getElementById').and.returnValue(mockElement as any);
+    spyOn(component, 'scroll');
+
+    component.scrollLeft();
+
+    expect(component.scroll).toHaveBeenCalledWith(125); // 200 - 75
+  });
+
+  it('should test component with custom scrollSpeed', fakeAsync(() => {
+    component.scrollSpeed = 200;
+    spyOn(component, 'scrollRight');
+
+    component.right();
+    tick(200);
+
+    expect(component.scrollRight).toHaveBeenCalled();
+    component.clear();
+  }));
+
+  it('should test component initialization with default values', () => {
+    expect(component.linkLabel).toBe('link');
+    expect(component.hideNav).toBe(false);
+    expect(component.distance).toBe(50);
+    expect(component.scrollSpeed).toBe(100);
+    expect(component.leftArrowHide).toBe(true);
+    expect(component.rightArrow).toBe(false);
+  });
+
+  it('should test component with hideNav true', () => {
+    component.hideNav = true;
+    fixture.detectChanges();
+
+    const controls = fixture.nativeElement.querySelectorAll('.control');
+    expect(controls.length).toBe(0);
+  });
+
+  it('should test component with custom linkLabel', () => {
+    const customItems = [
+      { title: 'Item1', customLink: 'http://example.com' },
+      { title: 'Item2' }
+    ];
+    component.items = customItems;
+    component.linkLabel = 'customLink';
+    fixture.detectChanges();
+
+    const links = fixture.nativeElement.querySelectorAll('a');
+    expect(links[0].href).toBe('http://example.com/');
+    expect(links[1].href).toBe('');
+  });
+
+  it('should handle empty items array', () => {
+    component.items = [];
+    fixture.detectChanges();
+
+    const nav = fixture.nativeElement.querySelector('nav');
+    expect(nav).toBeFalsy();
+  });
+
+  it('should handle null items', () => {
+    component.items = null;
+    fixture.detectChanges();
+
+    const nav = fixture.nativeElement.querySelector('nav');
+    expect(nav).toBeFalsy();
+  });
+
+  it('should test ImageModel interface usage', () => {
+    const imageModel = {
+      type: 'png',
+      image: 'data:image/png;base64,test'
+    };
+    component.navIcon = imageModel;
+
+    expect(component.navIcon.type).toBe('png');
+    expect(component.navIcon.image).toBe('data:image/png;base64,test');
   });
 });

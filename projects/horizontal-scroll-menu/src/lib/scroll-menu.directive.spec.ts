@@ -15,7 +15,7 @@ describe('ScrollMenuDirective', () => {
   beforeEach(() => {
 
     TestBed.configureTestingModule({
-      declarations: [HorizontalScrollMenuComponent, ScrollMenuDirective],
+      imports: [HorizontalScrollMenuComponent],
       providers: [
         { provide: ComponentFixtureAutoDetect, useValue: true }
       ]

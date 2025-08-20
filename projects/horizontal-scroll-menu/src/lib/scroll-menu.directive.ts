@@ -2,7 +2,7 @@ import { Directive, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[ngxScrollMenu]',
-  standalone: false
+  standalone: true
 })
 export class ScrollMenuDirective {
 
@@ -10,7 +10,7 @@ export class ScrollMenuDirective {
   constructor() {
   }
 
-  @HostListener('scroll', ['$event']) scrollMenu(e) {
+  @HostListener('scroll', ['$event']) scrollMenu(e: any) {
     const responseObject = {
       left_arrow: false,
       right_arrow: false

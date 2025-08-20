@@ -1,6 +1,6 @@
 {
   "name": "ngx-horizontal-scroll-menu",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A lightweight, customizable Angular library for creating beautiful horizontal scrolling menus with smooth navigation controls. Compatible with Angular 19+ and includes 100% test coverage.",
   "homepage": "https://github.com/isahohieku/ngx-horizontal-menu-scroll#readme",
   "keywords": [
@@ -44,6 +44,7 @@
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless --code-coverage=true",
     "coverage": "ng test --watch=false --code-coverage && cat ./coverage/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "e2e": "ng e2e",
     "pack:lib": "cd dist/horizontal-scroll-menu && npm pack",
     "publish:lib": "cd dist/horizontal-scroll-menu && npm publish",

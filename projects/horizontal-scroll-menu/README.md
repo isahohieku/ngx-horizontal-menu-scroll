@@ -46,7 +46,19 @@ npm install ngx-horizontal-scroll-menu --save
 
 ### 1. Import the Module
 
-**For Angular 19+ (Standalone Components):**
+**For Angular 19+ (Standalone Components - Recommended):**
+```typescript
+import { HorizontalScrollMenuComponent } from 'ngx-horizontal-scroll-menu';
+
+@Component({
+  standalone: true,
+  imports: [HorizontalScrollMenuComponent],
+  // ... your component
+})
+export class MyComponent { }
+```
+
+**Alternative - Using the Module:**
 ```typescript
 import { HorizontalScrollMenuModule } from 'ngx-horizontal-scroll-menu';
 

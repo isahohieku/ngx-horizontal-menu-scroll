@@ -1,0 +1,38 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Test files
+*.spec.ts
+*.spec.js
+karma.conf.js
+tsconfig.spec.json
+
+# Build files
+tsconfig.lib.json
+ng-package.json
+tslint.json
+
+# Development files
+.editorconfig
+.gitignore
+
+# Documentation (keep README.md and LICENSE)
+# README.md and LICENSE will be included automatically
+
+# Node modules
+node_modules/
+
+# Coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

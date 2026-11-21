@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2026-11-21
+
+### 🔧 Compatibility
+- Peer dependencies widened from `^19.0.0` to `^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0`, so the package installs on Angular 20, 21 and 22 without `--legacy-peer-deps`
+- Verified by building fresh Angular 20 and Angular 22 applications that consume the packed library, with both the standalone component and the NgModule
+
 ## [2.1.0] - 2025-08-20
 
 ### 🚀 Major Updates

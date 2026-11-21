@@ -7,7 +7,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/isahohieku/ngx-horizontal-menu-scroll/badge.svg?branch=master)](https://coveralls.io/github/isahohieku/ngx-horizontal-menu-scroll?branch=master)
 [![codebeat badge](https://codebeat.co/badges/09cf3a7d-902e-4671-a72a-ef3099ac4d72)](https://codebeat.co/projects/github-com-isahohieku-ngx-horizontal-menu-scroll-master)
 
-> **🚀 Now compatible with Angular 19!** Fully updated with 100% test coverage and modern Angular features.
+> **🚀 Compatible with Angular 19, 20, 21 and 22!** Fully updated with 100% test coverage and modern Angular features.
 
 ## Description
 
